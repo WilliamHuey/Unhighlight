@@ -41,6 +41,10 @@ Tested with Opera >= 12.16, Firefox 23, Chrome 29, Ie >= 6.
 ChangeLog:
 ------
 
+v1.01
+
+* Correct README.md
+
 v1.00
 
 * Initial release
