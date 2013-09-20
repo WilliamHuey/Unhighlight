@@ -3,7 +3,7 @@
 
 Description: 
 -------------
-Provides a unhighlight (deselect) event for input form elements (textarea, input).
+Provides an unhighlight (deselect) event for input form elements (textarea, input).
 
 Usage:
 -------------
@@ -26,8 +26,6 @@ Usage:
 </script>
 ```
 
-
-
 Notes:
 ------
 Chrome-based browsers and Ie will automatically perform a deselection for a textarea when refocusing on the textarea after losing focus on a textarea that previously had text selected. Supposely, there is text 'abc', highlighted in a textarea. Focus is lost by pressing tab and then the textarea is refocused by pressing shift tab. The unhighlight event will trigger.
@@ -45,6 +43,4 @@ ChangeLog:
 
 v1.00
 
-* Use native maxlength when supported.
-* Ability to show or hide indicator.
-* Drag and drop restriction.
+* Initial release
