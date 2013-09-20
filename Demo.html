@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Unhighlight Demo</title>
+  <meta charset="UTF-8">
+  <link href="lib/css/normalize.css" rel="stylesheet" />
+  <link href="lib/css/foundation.min.css" rel="stylesheet" />
+  <link href="assets/css/main.css" rel="stylesheet" />
+  <script src="lib/js/jquery-1.10.2.min.js"></script>
+  <script src="src/unHighlight.js"></script>
+  <script>
+  $(document).ready(function () {
+    $("input").unhighlight(function () {
+      alert("Unhighlight for input element.");
+    });
+    $("textarea").unhighlight(function () {
+      alert("Event came from the textarea.");
+    });
+    /*
+        //Could have use this code in place of the individual selectors 
+        //if targeting both types of elements at the same time in one selector
+        $('textarea, input').unHighlight(function (evt) {
+          var element = evt.target;
+            alert('Text was completely unhighlighted from element, ' + element);
+          });	   
+      */
+  });
+  </script>
+</head>
+
+<body>
+  <div class="row">
+    <div class="large-12 columns">
+      <header>
+        <img src="assets/img/Logo.png" alt="" />
+      </header>
+      <div class="row">
+        <div class="large-12 columns mc-w">
+          <div class="large-6 columns g">
+            <div class="row mc-rw">
+              <div class="mc-sw-1">
+                <div class="row">
+                  <div class="large-12 columns mc-h">
+                    <h3>
+                      What is Unhighlight?
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="mc-sw-2">
+                <div class="row">
+                  <div class="large-12 columns mc-w-sl">
+                    <p>Unhighlight is a JQuery plugin that provides a unhighlight (deselect) event for textarea and
+                      input form elements.</p>
+                    <p>The unhighlight event is triggered when text that was highlighted becomes deselected through
+                      mouse clicking, typing, or deleting within the input element.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="large-6 columns g">
+            <div class="row mc-rw">
+              <div class="mc-sw-1">
+                <div class="row">
+                  <div class="large-12 columns mc-h">
+                    <h3>
+                      Try It Out
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div class="mc-sw-2">
+                <div class="row">
+                  <div class="large-12 columns mc-w-sl">
+                    <div class="row">
+                      <div class="large-12 columns">
+                        <p>Input</p>
+                        <input type="text">
+                      </div>
+                      <div class="large-12 columns">
+                        <p>Textarea</p>
+                        <textarea rows="6"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns mc-w">
+      <div class="large-6 columns g">
+        <div class="row mc-rw">
+          <div class="mc-sw-1">
+            <div class="row">
+              <div class="large-12 columns mc-h">
+                <h3>
+                  Code
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="mc-sw-2">
+            <div class="row">
+              <div class="large-12 columns mc-w-sl">
+<pre><span class="cd-1">//Attach to all input elements</span>
+<span class="cd-2">$</span>("<span class="cd-3">input</span>")
+.unhighlight(<span class="cd-4">function</span>() {
+  <span class="cd-5">alert</span>(<span class="cd-6">"Unhighlight for input element."</span>);
+});
+</pre>
+
+<pre><span class="cd-1">//Now for all textarea elements</span>
+<span class="cd-2">$</span>("<span class="cd-3">textarea</span>")
+.unhighlight(<span class="cd-4">function</span>() {
+  <span class="cd-5">alert</span>(<span class="cd-6">"Event came from the textarea."</span>);
+});
+</pre> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="large-6 columns g">
+        <div class="row mc-rw">
+          <div class="mc-sw-1">
+            <div class="row">
+              <div class="large-12 columns mc-h">
+                <h3>
+                  Notes
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="mc-sw-2">
+            <div class="row">
+              <div class="large-12 columns mc-w-sl">
+                <div class="row">
+                  <div class="large-12 columns">
+                    <ul>
+                      <li>
+                        <p>Chrome-based browsers and Ie will automatically perform a deselection for a textarea when
+                          refocusing on the textarea after losing focus on a textarea that previously had text
+                          selected. Supposely, there is text 'abc', highlighted in a textarea. Focus is lost by 
+                          pressing tab and then the textarea is refocused by pressing shift tab. The unhighlight event 
+                          will trigger for the above browsers.</p>
+                      </li>
+                      <li>
+                        <p>Text must be completely unhighlighted for the unhighlight event to occur. Partial unhighlighting
+                          is not supported. For example, the text '123' is selected in a textarea with the mouse
+                          still held down. The mouse moves to change the selection to '12', but the unhighlight
+                          event will not trigger.</p>
+                      </li>
+                      <li>
+                        <p>If text was selected in an input or textarea element, focusing away from the element will not trigger 
+                        the unhighlight event.</p>
+                      </li>
+                      <li>
+                        <p>Requires JQuery >= 1.7 but should be on the >= 1.10.x branch to support older Ie.</p>
+                      </li>
+                      <li>
+                        <p>Tested with Opera >= 12.16, Firefox 23, Chrome 29, Ie >= 6.</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
