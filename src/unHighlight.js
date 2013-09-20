@@ -3,7 +3,7 @@
  *  Description: Provides a deselect event for input form elements (textarea, input).
  *  Author: William Huey
  *  License: MIT
- *  Version: 1.01
+ *  Version: 1.00.1
  *
  *  Credits:
  *  Tim Down (getInputSelection, setInputSelection)
