@@ -3,7 +3,7 @@
 
 Description: 
 -------------
-Provides an unhighlight (deselect) event for input form elements (textarea, input).
+Provides an unhighlight (deselect) event for input form elements (textarea, input). [Demo](http://williamhuey.github.io/code/unhighlight)
 
 Usage:
 -------------
@@ -40,6 +40,10 @@ Tested with Opera >= 12.16, Firefox 23, Chrome 29, Ie >= 6.
 
 ChangeLog:
 ------
+
+v1.00.2
+
+* Touch up demo page
 
 v1.00.1
 
