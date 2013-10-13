@@ -7,13 +7,21 @@
   <link href="lib/css/normalize.css" rel="stylesheet" />
   <link href="lib/css/foundation.min.css" rel="stylesheet" />
   <link href="assets/css/main.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+    <link href="lib/css/ie8-grid-foundation-4.css" rel="stylesheet" />
+    <link href="lib/css/Ie-styles.css" rel="stylesheet" />
+  <![endif]-->
   <script src="lib/js/jquery-1.10.2.min.js"></script>
   <script src="src/unHighlight.js"></script>
   <script>
   $(document).ready(function () {
+    //Hide warning message if javascript is enabled
+    $('#warn-msg-no-js-enabled').hide();
+
     $("input").unhighlight(function () {
       alert("Unhighlight for input element.");
     });
+
     $("textarea").unhighlight(function () {
       alert("Event came from the textarea.");
     });
@@ -30,6 +38,11 @@
 </head>
 
 <body>
+  <div class="large-12 columns" id="warn-msg-no-js-enabled">
+    <div class="row">
+      <p>Warning, javascript is not enabled in your browser. Please enable javascript or else the examples will not work.</p>
+    </div>
+  </div>
   <div class="row">
     <div class="large-12 columns" id="top-row">
       <ul class="large-4 columns">

@@ -64,16 +64,18 @@ h3 {
   color: white;
 }
 
-#top-row {
-  /*background-color: #e5104d;*/
+#warn-msg-no-js-enabled {
+  text-align: center;
+  background-color: white;
+  color: red;
+  font-weight: 600;
+  border: 3px solid red;
 }
 
 #top-row > ul {
   margin: 0em;
   background-color: #e5104d;
 }
-
-
 
 ul.top-ul-2 > li {
 
