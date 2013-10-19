@@ -3,7 +3,7 @@
  *  Description: Provides a deselect event for input form elements (textarea, input).
  *  Author: William Huey
  *  License: MIT
- *  Version: 1.00.1
+ *  Version: 1.00.3
  *
  *  Credits:
  *  Tim Down (getInputSelection, setInputSelection)
@@ -44,18 +44,18 @@
           //Preserve the 'this' reference to the object
           arg[0].call(this, evt);
         })
-          .on("select", function () {
+          .on("select." + pluginName, function () {
             pm.trackSelection();
             ds.selectedAndBlurredBefore = false;
           })
-          .on("blur", function () {
+          .on("blur." + pluginName, function () {
             var prevSelection = ds.isTextSelected;
             //For Ie to prevent misread cursor with blur
             if (prevSelection) {
               ds.selectedAndBlurredBefore = true;
             }
           })
-          .on("keydown", function () {
+          .on("keydown." + pluginName, function () {
             //Need to use a timer for keydown because event occurs 
             //before text changes in the input element
             setTimeout(function () {
@@ -73,13 +73,13 @@
           })
         //Have to use a timer for these events because of a bug in Chrome
         //http://code.google.com/p/chromium/issues/detail?id=32865
-        .on("click", function () {
+        .on("click." + pluginName, function () {
           setTimeout(function () {
             pm.trackSelection();
             ds.selectedAndBlurredBefore = false;
           });
         })
-          .on("mouseout focus", function () {
+          .on("mouseout." + pluginName + " focus." + pluginName, function () {
             setTimeout(function () {
               pm.trackSelection();
             });

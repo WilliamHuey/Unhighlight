@@ -40,15 +40,14 @@ Tested with Opera >= 12.16, Firefox 23, Chrome 29, Ie >= 6.
 
 ChangeLog:
 ------
+v1.00.3
+* Refactor: Namespace events
 
 v1.00.2
-
-* Touch up demo page
+* Fix:Touch up demo page
 
 v1.00.1
-
-* Correct README.md
+* Fix: Correct README.md
 
 v1.0.0
-
 * Initial release
